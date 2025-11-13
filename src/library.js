@@ -28,16 +28,19 @@ export function addBookToLibrary(title, author, pages) {
 
 // **change so it uses unique id later**
 export function removeBookFromLibrary(title) {
-    const selectByTitle = myLibrary.findIndex(book => book.title === title)
+    //find and remove
+    const selectByTitle = myLibrary.findIndex(book => book.title === title);
+
+    if (selectByTitle === -1) return; //exits if findIndex did not find anything
     myLibrary.splice(selectByTitle, 1);
 }
 
 
 
 // ---- FOR TESTING: ----
-addBookToLibrary("cool title", "kalle anka", 170);
-addBookToLibrary("boomzi", "honung Jr", 70);
-addBookToLibrary("321", "honung Jr", 70);
+// addBookToLibrary("cool title", "kalle anka", 170);
+// addBookToLibrary("boomzi", "honung Jr", 70);
+// addBookToLibrary("321", "honung Jr", 70);
 
 
 // const testFilter = myLibrary.filter(book => book.pages === 70);
@@ -47,4 +50,4 @@ addBookToLibrary("321", "honung Jr", 70);
 
 // console.log(myLibrary);
 
-export const mango = 123
+// export const mango = 123
