@@ -8,7 +8,7 @@ function displayLibrary(libraryArray) {
             <li id=${book.id}>
             <h3>${book.title}</h3>
             <p></p>
-            <button class="remove-book-btn">remove</button>
+            <button id="remove-book-btn">remove</button>
             </li>
             `)
         .join("");

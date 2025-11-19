@@ -28,12 +28,12 @@ export function addBookToLibrary(title, author, pages) {
 };
 
 // ****change so it uses unique id later****
-export function removeBookFromLibrary(title) {
+export function removeBookFromLibrary(id) {
     //find and remove
-    const selectByTitle = myLibrary.findIndex(book => book.title === title);
+    const selectByID = myLibrary.findIndex(book => book.id === id);
 
-    if (selectByTitle === -1) return; //exit if findIndex did not find anything
-    myLibrary.splice(selectByTitle, 1);
+    if (selectByID === -1) return; //exit if findIndex did not find anything
+    myLibrary.splice(selectByID, 1);
 }
 
 
