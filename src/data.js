@@ -1,6 +1,6 @@
 
 // so website can remember library
-export const myLibrary = [];
+export let myLibrary = [];
 
 
 // new book template + unique id

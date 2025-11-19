@@ -8,10 +8,17 @@
 <body>
     <header>
         <h1>
-            yup
+            the library:
         </h1>
     </header>
     <main>
+        <form id="book-form">
+            <input class="title-input" name="title" value="" placeholder="Title" required>
+            <input class="author-input" name="author" value="" placeholder="Author" required>
+            <input class="pages-input" name="pages" type="number" value="" min="1" placeholder="Pages" required>
+            
+            <button type="submit">add book</button>
+        </form>
         <section id="library">
             <ul id="library-list"></ul>
         </section>
