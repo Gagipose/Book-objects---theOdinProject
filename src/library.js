@@ -1,16 +1,12 @@
-// start with pseudo code
-
-// user gives title, author and pages
-// Fucntion makes book object named with unique id + added to array
 
 // so website can remember library
 export const myLibrary = [];
 
 
-// input: title, author, pages -> output: book object (with random id)
-export function Book(title, author, pages) {
+// new book template + unique id
+function Book(title, author, pages) {
     if (!new.target) {
-        throw Error("gotta use the -new- keyword first");
+        throw Error("gotta use the -new- keyword first"); //forces dev to use "new" keyword
     }
     this.title = title;
     this.author = author;
@@ -20,34 +16,26 @@ export function Book(title, author, pages) {
     
 };
 
-// makes adding unique books to array easier
+// make new book + add to array for management
 export function addBookToLibrary(title, author, pages) { 
     const newBook = new Book(title, author, pages);
     myLibrary.push(newBook);
+    console.log(`
+        new book made and added:
+        title: ${newBook.title}
+        id: ${newBook.id}
+        `)
 };
 
-// **change so it uses unique id later**
+// ****change so it uses unique id later****
 export function removeBookFromLibrary(title) {
     //find and remove
     const selectByTitle = myLibrary.findIndex(book => book.title === title);
 
-    if (selectByTitle === -1) return; //exits if findIndex did not find anything
+    if (selectByTitle === -1) return; //exit if findIndex did not find anything
     myLibrary.splice(selectByTitle, 1);
 }
 
 
 
 // ---- FOR TESTING: ----
-// addBookToLibrary("cool title", "kalle anka", 170);
-// addBookToLibrary("boomzi", "honung Jr", 70);
-// addBookToLibrary("321", "honung Jr", 70);
-
-
-// const testFilter = myLibrary.filter(book => book.pages === 70);
-// console.log(testFilter);
-
-// removeBookFromLibrary("boomzi")
-
-// console.log(myLibrary);
-
-// export const mango = 123
