@@ -28,6 +28,10 @@ li > p {
     margin: 0;
 }
 
+body {
+  background-color: rgb(162, 162, 162);
+}
+
 /* --- Layout / grid --- */
 
 /* --- HEADER --- */
