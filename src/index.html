@@ -13,14 +13,15 @@
         </h1>
     </header>
     <main>
-        <dialog open>
+        <button id="addBooksDialog">Add More Books</button>
+        <dialog id="enterBookDialog">
             <form id="book-form">
             <input class="title-input" name="title" value="" placeholder="Title" required>
                 <input class="author-input" name="author" value="" placeholder="Author" required>
                 <input class="pages-input" name="pages" type="number" value="" min="1" placeholder="Pages" required>
             
                 <button type="submit">add book</button>
-                <button type="button">cancel</button>
+                <button id="cancelButton" type="button">cancel</button>
             </form>
         </dialog>
         <section id="library">
