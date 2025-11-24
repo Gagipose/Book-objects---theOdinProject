@@ -38,6 +38,13 @@ function removeBtn(id) {
     displayLibrary(library.myLibrary);
 }
 
+function changeReadStatus(id) {
+    library.changeReadStatus(id);
+
+    displayLibrary(library.myLibrary);
+}
+
+
 
 // ---- EVENT LISTENERS ----
 
@@ -51,15 +58,23 @@ bookForm.addEventListener("submit", event => { // on sumbit:
 // use bubbeling to see what element go clicked then use .closest
 libraryList.addEventListener("click", event => {
 
-    if (!event.target.matches("#remove-book-btn")) return;
-    
     // if target is a button, grab id of closest parent li
     const parentLi = event.target.closest("li");
     const bookID = parentLi.id;
+
+    if (event.target.matches("#remove-book-btn")) {
+        removeBtn(bookID);
+    } 
     
-    removeBtn(bookID);
-    
+    if (event.target.matches("#changeReadStatus")) {
+        changeReadStatus(bookID);
+    } else {
+        return
+    }
 });
+
+
+
 
 openDialogBtn.addEventListener("click", () => {
     dialog.showModal();
@@ -77,3 +92,8 @@ library.addBookToLibrary("The Catcher in the Rye", "J.D. Salinger", 277);
 library.addBookToLibrary("To Kill a Mockingbird", "Harper Lee", 336);
 
 displayLibrary(library.myLibrary);
+
+
+console.log(library.myLibrary[0].readStatus)
+library.myLibrary[0].readToggle()
+console.log(library.myLibrary[0].readStatus)

@@ -9,7 +9,9 @@ function displayLibrary(libraryArray) {
             <h3>${book.title}</h3>
             <p>Author: ${book.author}</p>
             <p>Pages: ${book.pages}</p>
+            <p>Read Status: ${book.readStatus}</p>
             <button id="remove-book-btn">remove</button>
+            <button id="changeReadStatus">Change Read Status</button>
             </li>
             `)
         .join("");
