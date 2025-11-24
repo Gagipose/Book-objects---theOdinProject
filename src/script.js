@@ -94,6 +94,3 @@ library.addBookToLibrary("To Kill a Mockingbird", "Harper Lee", 336);
 displayLibrary(library.myLibrary);
 
 
-console.log(library.myLibrary[0].readStatus)
-library.myLibrary[0].readToggle()
-console.log(library.myLibrary[0].readStatus)
