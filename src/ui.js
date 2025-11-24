@@ -7,7 +7,8 @@ function displayLibrary(libraryArray) {
         .map(book => `
             <li id=${book.id}>
             <h3>${book.title}</h3>
-            <p></p>
+            <p>Author: ${book.author}</p>
+            <p>Pages: ${book.pages}</p>
             <button id="remove-book-btn">remove</button>
             </li>
             `)

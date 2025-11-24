@@ -1,6 +1,6 @@
 
 // so website can remember library
-export let myLibrary = [];
+let myLibrary = [];
 
 
 // new book template + unique id
@@ -17,7 +17,7 @@ function Book(title, author, pages) {
 };
 
 // make new book + add to array for management
-export function addBookToLibrary(title, author, pages) { 
+function addBookToLibrary(title, author, pages) { 
     const newBook = new Book(title, author, pages);
     myLibrary.push(newBook);
     console.log(`
@@ -27,8 +27,8 @@ export function addBookToLibrary(title, author, pages) {
         `)
 };
 
-// ****change so it uses unique id later****
-export function removeBookFromLibrary(id) {
+
+function removeBookFromLibrary(id) {
     //find and remove
     const selectByID = myLibrary.findIndex(book => book.id === id);
 
@@ -36,6 +36,6 @@ export function removeBookFromLibrary(id) {
     myLibrary.splice(selectByID, 1);
 }
 
-
+export {removeBookFromLibrary, addBookToLibrary, myLibrary}
 
 // ---- FOR TESTING: ----

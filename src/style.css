@@ -32,6 +32,18 @@ body {
   background-color: rgb(162, 162, 162);
 }
 
+dialog {
+  display: flex;
+  justify-self: center;
+  margin-top: 20%;
+  border: 0;
+}
+
+dialog > * {
+  display: flex;
+  flex-direction: column;
+}
+
 /* --- Layout / grid --- */
 
 /* --- HEADER --- */
