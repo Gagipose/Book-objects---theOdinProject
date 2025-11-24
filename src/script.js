@@ -8,6 +8,10 @@ import { displayLibrary } from "./ui.js";
 // ---- DOM SETUP ----
 const bookForm = document.getElementById("book-form");
 const libraryList = document.getElementById("library-list");
+const openDialogBtn = document.getElementById("addBooksDialog");
+const dialog = document.getElementById("enterBookDialog");
+const cancelDialogBtn = document.getElementById("cancelButton");
+
 
 
 // ---- FUNCTIONS ----
@@ -46,7 +50,7 @@ bookForm.addEventListener("submit", event => { // on sumbit:
 // make remove Btn remove --- note: triggers when whole list is clicked
 // use bubbeling to see what element go clicked then use .closest
 libraryList.addEventListener("click", event => {
-    console.log(event.target.matches("#remove-book-btn"));
+
     if (!event.target.matches("#remove-book-btn")) return;
     
     // if target is a button, grab id of closest parent li
@@ -55,10 +59,15 @@ libraryList.addEventListener("click", event => {
     
     removeBtn(bookID);
     
-    console.log("dang you hit it yay!");
-    
 });
 
+openDialogBtn.addEventListener("click", () => {
+    dialog.showModal();
+});
+
+cancelDialogBtn.addEventListener("click", () => {
+    dialog.close();
+});
 
 // ---- CALLING FUNCTIONS ----
 //bugfixers
